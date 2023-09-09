@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    portfolio
+{% endblock %}
+
+{% block main %}
+ <h1>Portfolio</h1>
+ <h2 align="center">Net Value</h2>
+ <table>
+     <tr>
+         <td>Cash</td>
+         <td>{{ cash }}</td>
+     </tr>
+     <tr>
+         <td>Stocks</td>
+         <td>{{ total }}</td>
+     </tr>
+     <tr>
+         <td><b>Total</b></td>
+         <td><b>{{ cash+total }}</b></td>
+     </tr>
+ </table>
+ <h2 align="center">Stocks</h2>
+ <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>stock</th>
+                            <th>price</th>
+                            <th>shares</th>
+                            <th>total value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in range(length) %}
+                        <tr>
+                        <td>{{ i+1 }}</td>
+                        <td>{{ stocks[i] }}</td>
+                        <td>${{ prices[i] }}</td>
+                        <td>{{ shares[i] }}</td>
+                        <td>${{ prices[i]*shares[i] }} </td>
+                        </tr>
+                        {% endfor %}
+                        <tr>
+                            <td>total</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>{{ total }}</td>
+                        </tr>
+                        <!-- TODO: Loop through the database entries to display them in this table -->
+                    </tbody>
+</table>
+{% endblock %}

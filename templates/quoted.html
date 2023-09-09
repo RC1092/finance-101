@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    quote Price
+{% endblock %}
+
+{% block main %}
+ <table>
+                    <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>{{ symbol }}</td>
+                        <td>{{ price }}</td></tr>
+                        <!-- TODO: Loop through the database entries to display them in this table -->
+                    </tbody>
+</table>
+{% endblock %}
